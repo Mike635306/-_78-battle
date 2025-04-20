@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lilita+One&family=Poetsen+One&family=Special+Gothic+Expanded+One&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background: radial-gradient(circle 300px at 50% 0% ,rgb(77, 77, 77),transparent),
+    radial-gradient(circle 200px at 50% 50% ,rgb(17, 0, 16),rgb(11, 0, 29)) ;
+ color: antiquewhite;
+}
+.container{
+ width: 1228px;
+ margin: 0 auto;
+ min-height: 100vh;
+ font-family: "Special Gothic Expanded One", sans-serif;
+ font-weight: 400;
+ font-style: normal;
+}
+.wheel-container{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+height: 800px;
+position: relative;
+}
+.wheel{
+position: relative;
+width: 200px;
+height: 200px;
+transform: perspective(1000px);
+transform-style: preserve-3d;
+}
+.card{
+    
+position: absolute;
+width: 100%;
+height: 100%;
+background: rgba(255,255,255,0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+border-radius: 15px;
+box-sizing: 0px 0px 20px rgba(255,255,255,0.137);
+transform-origin: center;
+transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+backdrop-filter: blur(10px);
+& img{
+    width: 150px;
+}
+
+@font-face{
+font-family:'csgo';
+src:url(../font/input/cs_regular.ttf)
+}
+
+
+}
+.card-color{
+height: 10px;
+width: 50px;
+border-radius: 50%;
+}
+
+.card-item{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#spin-btn{
+    width: 250px;
+    height: 50px;
+    background: rgb(1, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+transition: all .3s ease;
+&:hover{
+transform: scale(1.1);
+cursor: pointer;
+background-color: greenyellow;
+color: black;
+}
+  &:after{
+    content: '';
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white;
+    animation: flash 5s infinite linear;
+    filter: blur(10px);
+  }
+}
+
+
+#marker{
+position: absolute;
+top: 8%;
+z-index: 10;
+left: 50%;
+transform: translateX(-50%);
+width: 40px;
+height: 40px;
+background-color: rgb(1, 132, 255);
+clip-path: polygon(50% 100%,0 0,100% 0 );
+filter: drop-shadow(0 0 10px rgb(1, 132, 255));
+}
+
+.prize{
+width: 100vw;
+height: 100vh;
+backdrop-filter: blur(30px);
+display: none;
+align-items: center;
+justify-content: center;
+position: fixed;
+inset: 0;
+
+}
+
+.aside-items{
+position: fixed;
+left: 0;
+top: 0;
+min-height: max-content;
+& .aside-item{
+width: 220px;
+height: 150px;
+background: redial-gradient(circle 50px, rgb(90, 90, 90),black);
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 20px;
+font-family: Arial;
+animation: scale 1s 1;
+& img{
+  width: 150px;
+}
+}
+}
+.stats{
+position: fixed;
+bottom: 10px;
+left: 10px;
+display: flex;
+align-items: center;
+padding: 20px;
+width: 150px;
+height: 80px;
+border-radius: 30px;
+background: rgb(17, 17, 17);
+
+
+
+}
+
+.stats-coins{
+display: flex;
+width: 100%;
+height: 100%;
+font-size: 1.5rem;
+font-family: Arial;
+justify-content: space-between;
+align-items: center;
+}
+
+
+
+
+#prize-img{
+  width: 300px;
+animation: scale 2s 1 linear;
+}
+
+@keyframes scale{
+
+0%{
+ transform: scale(0);
+}
+100%{
+  transform: scale(1.1);
+}
+}
+
+
+
+
+@keyframes flash{
+    0%{
+        transform: translateX(-10px);
+    }
+  100%{
+    transform: translateX(250px);
+  }
+}
+
