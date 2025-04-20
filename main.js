@@ -54,7 +54,7 @@ wheel.style.transform = '';
 clearTimeout(timeout);
 prizeimg.src = prizes[randomAngle].src;
 wallet+=prizes[randomAngle].price;
-window.localStorage.setitem('wallet',wallet);
+window.localStorage.setItem('wallet',wallet);
 coin.innerText = wallet + '$';
 prizesWindow.style.display = 'flex';
 addLastItem(randomAngle);
